@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOMBOCLAAT TOOLS</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <h1>Generator numeru PESEL</h1>
+    <div class="warning" id="warning">
+        <img src="img/warning.svg" width="75" height="75">
+        <p> Autor strony nie ponosi odpowiedzialności za wszelkie niewłaściwe <br>
+            wykorzystanie niniejszych narzędzi. Strona ma charakter wyłącznie edukacyjny. <br>
+            <b> Za posługiwanie się fałszywym numerem PESEL grozi kara więzienia od 3 miesięcy do 5 lat. </b>
+        </p>
+        <button id="understood">Rozumiem</button>
+    </div>
+    <h3 id="result">Tutaj pojawi się wynik</h3>
+    <div class="content">
+        <form id="form">
+            <label>
+                Data urodzenia: <input type="date" name="birthdate">
+            </label>
+            <br>
+            <label>
+                Płeć:
+                <select name="gender">
+                    <option value="1">mężczyzna</option>
+                    <option value="2">kobieta</option>
+                </select>
+            </label>
+            <br>
+            <button type="submit">Wygeneruj</button>
+        </form>
+    </div>
+</body>
+
+</html>
