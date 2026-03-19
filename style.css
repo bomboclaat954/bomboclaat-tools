@@ -14,7 +14,16 @@ select {
     padding-left: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
-    width: 30%;
+    max-width: 30%;
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    .warning {
+        width: 100%;
+        max-width: none;
+        box-sizing: border-box;
+    }
 }
 
 .hidden {
@@ -38,4 +47,8 @@ td {
 
 .tables table {
     margin-left: 10px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
 }
