@@ -12,7 +12,7 @@
 <body>
     <h1>Generator numeru PESEL</h1>
     <div class="warning" id="warning">
-        <img src="img/warning.svg" width="75" height="75">
+        <h2>UWAGA!</h2>
         <p> Autor strony nie ponosi odpowiedzialności za wszelkie niewłaściwe <br>
             wykorzystanie niniejszych narzędzi. Strona ma charakter wyłącznie edukacyjny. <br>
             <b> Za posługiwanie się fałszywym numerem PESEL grozi kara więzienia od 3 miesięcy do 5 lat. </b>
@@ -21,21 +21,166 @@
     </div>
     <h3 id="result">Tutaj pojawi się wynik</h3>
     <div class="content">
-        <form id="form">
-            <label>
-                Data urodzenia: <input type="date" name="birthdate">
-            </label>
-            <br>
-            <label>
-                Płeć:
-                <select name="gender">
-                    <option value="1">mężczyzna</option>
-                    <option value="2">kobieta</option>
-                </select>
-            </label>
-            <br>
-            <button type="submit">Wygeneruj</button>
-        </form>
+        <div class="generator">
+            <form id="form">
+                <label>
+                    Data urodzenia: <input type="date" name="birthdate" min="1900-01-01" max="2099-12-31">
+                </label>
+                <br>
+                <label>
+                    Płeć:
+                    <select name="gender">
+                        <option value="1">mężczyzna</option>
+                        <option value="2">kobieta</option>
+                    </select>
+                </label>
+                <br>
+                <button type="submit">Wygeneruj</button>
+            </form>
+        </div>
+        <div class="how-it-works">
+            <h2>Jak to działa?</h2>
+            <p>Numer PESEL składa się z 11 cyfr, z czego pierwsze 6 to data urodzenia posiadacza numeru w formacie
+                <b>RRMMDD</b>. Dla osób
+                urodzonych od 2000 roku do miesiąca dodaje się 20. <br>
+                Przykład: 10<b>23</b>24 = 24.03.<b>2010</b>;
+                10<b>03</b>24 = 24.03.<b>1910</b>.
+            </p>
+            <p>
+                Kolejne 4 cyfry to numer seryjny, z czego ostatnia z nich mówi o płci: jeśli jest parzysta, jest to
+                kobieta, a jeśli nieparzysta, to mężczyzna. Są one tutaj generowane losowo, ale <br>
+                z zachowaniem zasady o płci.
+            </p>
+            <p>
+                Najwięcej obliczeń jest z ostatnią, jedenastą cyfrą numeru. Jest to tzw. cyfra kontrolna, która
+                informuje
+                nas, czy numer jest poprawny. Aby ją obliczyć używa się specjalnego algorytmu. <br>
+                Weźmy przykładowy PESEL bez ostatniej cyfry: <b>0727034977</b> i obliczmy ją. Aby to zrobić, najpierw
+                każdej z cyfr trzeba nadać odpowiednią wagę (czyli pomnożyć ją).
+            </p>
+            <div class="tables">
+                <div></div>
+                <table>
+                    <tr>
+                        <th colspan="2">Wzór</th>
+                    </tr>
+                    <tr>
+                        <th>Cyfra</th>
+                        <th>Waga</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>3</td>
+                    </tr>
+                </table>
+
+                <table>
+                    <tr>
+                        <th colspan="3">Obliczenia</th>
+                    </tr>
+                    <tr>
+                        <th>Cyfra</th>
+                        <th>Waga</th>
+                        <th>Wynik</th>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>3</td>
+                        <td>21</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>7</td>
+                        <td>14</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>9</td>
+                        <td>63</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>7</td>
+                        <td>28</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>9</td>
+                        <td>81</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>1</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>3</td>
+                        <td>21</td>
+                    </tr>
+                </table>
+            </div>
+            <p>
+                Sumujemy wyniki z mnożenia: 0 + 21 + 14 + 63 + 0 + 9 + 28 + 81 + 7 + 21 = <b>244</b>. <br>
+                Bierzemy resztę z dzielenia tej sumy przez 10 (modulo): 244 % 10 = <b>4</b>. <br>
+                Odejmujemy tą resztę od 10 i mamy cyfrę kontrolną: 10 - 4 = <b>6</b>. <br>
+                Uzupełnijmy podany wcześniej PESEL o ostatnią cyfrę: 0727034977<b>6</b>. <br>
+                I w ten oto sposób mamy w pełni poprawny numer PESEL zgodny z oficjalnym algorytmem. <br>
+                Wszystkie informacje tutaj podane pochodzą ze
+                <a href="https://www.gov.pl/web/gov/czym-jest-numer-pesel">strony rządowej</a>.
+            </p>
+        </div>
     </div>
 </body>
 
