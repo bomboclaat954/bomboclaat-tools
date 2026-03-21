@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOMBOCLAAT TOOLS</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="js/check.js"></script>
+</head>
+
+<body>
+    <h1>Sprawdzanie numeru dowodu osobistego</h1>
+    <h3 id="result">Tutaj pojawi się wynik</h3>
+    <div class="content">
+        <div class="check">
+            <form id="form_check">
+                Seria i numer dowodu: <input type="text" name="sn">
+                <br>
+                <button type="submit">Sprawdź</button>
+            </form>
+        </div>
+        <div class="how-it-works">
+            <h2>Jak to działa?</h2>
+            <p>Najpierw program sprawdza czy numer ma dokładnie 9 znaków. Jeśli tak, liczy sumę kontrolną i sprawdza czy
+                jest ona podzielna przez 10. Jeśli jest to znaczy, że numer jest poprawny. <br>
+                Algorytm do obliczania sumy kontrolnej jest podany na
+                <a href="./generator.html">stronie do generowania numeru</a>.
+            </p>
+        </div>
+        <a href="../index.html">Wróć na stronę główną</a>
+    </div>
+</body>
+
+</html>

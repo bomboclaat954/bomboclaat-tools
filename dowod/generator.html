@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOMBOCLAAT TOOLS</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="js/generator.js"></script>
+</head>
+
+<body>
+    <h1>Generator numeru dowodu osobistego</h1>
+    <h3 id="result">Tutaj pojawi się wynik</h3>
+    <div class="content">
+        <div class="generator">
+            <button id="generate">Wygeneruj</button>
+        </div>
+        <div class="how-it-works">
+            <h2>Jak to działa?</h2>
+            <p>
+                Przykładowy numer dowodu osobistego wygląda tak: <b>ABC 123456</b> i składa się z
+                dwóch części. Pierwsza
+                to seria (<b>ABC</b>), a druga to właściwy numer (<b>123456</b>).
+                Seria to zawsze <br>
+                3 litery alfabetu łacińskiego (czyli bez polskich znaków). Pierwsza cyfra zaraz po serii to cyfra
+                kontrolna, ale nie będziemy się nią zajmować. Interesuje nas <b>suma kontrolna</b>.
+            </p>
+            <p>
+                Aby obliczyć sumę kontrolną dla przykładowego dowodu o serii <b>FXE</b> i numerze
+                <b>816094</b> musimy wykonać kilka obliczeń.
+            </p>
+            <p>
+                Każda litera od <b>A</b> do <b>Z</b> (za wyjątkiem polskich znaków diakrytycznych) ma przypisaną wartość
+                liczbową. Są
+                to kolejne liczby od <b>10</b> do <b>35</b>. <b>A = 10</b>, <b>B = 11</b>, <b>C = 12</b>, ..., <b>Z =
+                    35</b>. <br>
+                Z tego wynika, że <b>F = 15</b>, <b>X = 33</b>,
+                <b>E = 14</b>. Teraz każdemu znakowi nadajemy odpowiednią wagę, czyli mnożymy go przez
+                odpowiednią liczbę. Wagi podano
+                w tabeli.
+            </p>
+            <div class="tables">
+                <table>
+                    <tr>
+                        <th colspan="2">Wzór</th>
+                    </tr>
+                    <tr>
+                        <th>Znak</th>
+                        <th>Waga</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>3</td>
+                    </tr>
+                </table>
+
+                <table>
+                    <tr>
+                        <th colspan="3">Obliczenia</th>
+                    </tr>
+                    <tr>
+                        <th>Znak</th>
+                        <th>Waga</th>
+                        <th>Wynik</th>
+                    </tr>
+                    <tr>
+                        <td>F</td>
+                        <td>7</td>
+                        <td>105</td>
+                    </tr>
+                    <tr>
+                        <td>X</td>
+                        <td>3</td>
+                        <td>99</td>
+                    </tr>
+                    <tr>
+                        <td>E</td>
+                        <td>1</td>
+                        <td>14</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>72</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>7</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>3</td>
+                        <td>18</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>7</td>
+                        <td>63</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>12</td>
+                    </tr>
+                </table>
+            </div>
+            <p>
+                Sumujemy wszystko: 105 + 99 + 14 + 72 + 7 + 18 + 0 + 63 + 12 = <b>390</b> <br>
+                Jeżeli suma jest podzielna bez reszty przez 10 to numer jest poprawny. 390 dzieli się bez reszty przez
+                10, a więc numer dowodu <b>FXE 816094</b> jest poprawny.
+            </p>
+        </div>
+        <a href="../index.html">Wróć na stronę główną</a>
+    </div>
+</body>
+
+</html>
