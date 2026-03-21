@@ -9,6 +9,11 @@ select {
     margin-bottom: 3px;
 }
 
+button,
+input {
+    font-family: "inter";
+}
+
 .warning {
     background-color: rgba(237, 80, 80, 0.471);
     padding-left: 10px;
