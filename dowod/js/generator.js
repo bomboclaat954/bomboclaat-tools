@@ -47,10 +47,6 @@ function generateNumber() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    const btn = document.getElementById("generate");
     const res = document.getElementById("result");
-    btn.addEventListener("click", () => {
-        const n = generateNumber();
-        res.textContent = n;
-    })
+    res.textContent = generateNumber();
 })
