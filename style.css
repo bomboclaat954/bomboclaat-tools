@@ -16,11 +16,13 @@ input {
 
 .warning {
     background-color: rgba(237, 80, 80, 0.471);
-    padding-left: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    max-width: 30%;
+    padding: 10px;
+    max-width: 67%;
     width: 100%;
+}
+
+.warning h2 {
+    margin-top: 5px;
 }
 
 @media (max-width: 600px) {
@@ -56,4 +58,8 @@ td {
 
 tr:nth-child(even) {
     background-color: #f2f2f2;
+}
+
+.content {
+    max-width: 900px;
 }
