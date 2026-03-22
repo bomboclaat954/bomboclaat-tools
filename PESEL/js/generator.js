@@ -54,6 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const m = Number(birthdate.slice(5, 7));
         const d = Number(birthdate.slice(8, 10));
         res.textContent = generatePESEL(y, m, d, g);
-    })
+    });
 })
 
