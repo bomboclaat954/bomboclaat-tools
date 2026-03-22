@@ -2,6 +2,7 @@
 
 body {
     font-family: "inter";
+    background-color: #f2ece3;
 }
 
 input,
@@ -52,11 +53,12 @@ td {
 }
 
 tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: #d5d0c87e;
 }
 
 .content {
     max-width: 900px;
+    margin-top: 100px;
 }
 
 .ver {
@@ -89,4 +91,19 @@ tr:nth-child(even) {
 
 .res h3 {
     margin: 0;
+}
+
+.titlebar {
+    width: 100%;
+    background-color: #1a2e3b;
+    height: 75px;
+    text-align: center;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.titlebar h1 {
+    margin-top: 18px;
 }
